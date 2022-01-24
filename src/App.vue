@@ -12,7 +12,7 @@ import HelloWorld from '~/components/HelloWorld'
         },
         data() {
             return {
-                message: 'Hello Vue!!!'
+                message: 'Hello Vue!'
             }
         }
     }
