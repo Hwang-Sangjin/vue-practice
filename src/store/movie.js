@@ -8,7 +8,7 @@ export default {
     state: () => {
         return {
             movies: [],
-            message: '',
+            message: 'Search for the movie title!',
             loading: false
         }
     },
@@ -29,7 +29,15 @@ export default {
     // 비동기
     actions: {
         async searchMovies(context, payload){
-            
+            if(context.state.loading) {
+                return
+            }
+
+            context.commit('updateState', {
+                message: '',
+                loading: true
+            })
+
             try{
                 const res = await _fetchMovie({
                     ...payload,
@@ -60,6 +68,10 @@ export default {
                 commit('updateState', {
                     movies: [],
                     message: message
+                })
+            } finally {
+                context.commit('updateState', {
+                    loading: false
                 })
             }
             
