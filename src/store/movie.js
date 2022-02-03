@@ -66,7 +66,7 @@ export default {
                     }
                 }
             } catch(message) {
-                commit('updateState', {
+                context.commit('updateState', {
                     movies: [],
                     message: message
                 })
