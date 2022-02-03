@@ -4,7 +4,7 @@
         <a 
             href="http://github.com/Hwang-Sangjin/vue-practice"
             target="_blank">
-            (c){{new Date().getFullYear() }} HEROPY
+            (c){{new Date().getFullYear() }} JIN
         </a>
     </footer>
 </template>
